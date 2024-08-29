@@ -1,0 +1,131 @@
+/* Existing styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    color: white;
+    height: 100vh;
+    background: #000;
+    position: relative;
+}
+
+#loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: #ffcc00;
+    z-index: 10;
+    transition: opacity 1s ease-out;
+}
+
+#main-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.hidden {
+    display: none;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpeg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    z-index: 10;
+    padding-top: 100px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.title {
+    font-size: 3em;
+    margin: 0;
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #ff3366;
+    text-shadow: 0 0 10px #ff3366;
+}
+
+.message {
+    font-size: 1.5em;
+    margin-top: 20px;
+    white-space: nowrap; /* Ensure text doesn't wrap */
+    overflow: hidden;
+    display: inline-block;
+    border-right: .15em solid #ffcc00; /* Cursor effect */
+    animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Blinking caret */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #ffcc00; }
+}
+
+/* Bubble effect styles */
+#bubbles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    z-index: 1;
+    animation: bubble-animation 10s infinite;
+}
+
+@keyframes bubble-animation {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-100vh) scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5em; /* Adjust size for smaller screens */
+    }
+
+    .message {
+        font-size: 1.2em; /* Adjust size for smaller screens */
+        white-space: normal; /* Allow text to wrap */
+        border-right: none; /* Remove cursor effect */
+        animation: none; /* Remove animation for better readability on small screens */
+    }
+}

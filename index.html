@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Bubbles Container -->
+    <div id="bubbles-container"></div>
+    
+    <!-- Loader -->
+    <div id="loader">Simran ~</div>
+    
+    <!-- Main Content -->
+    <div id="main-content" class="hidden">
+        <!-- Background Image -->
+        <div class="background-image"></div>
+        
+        <!-- Audio -->
+        <audio id="mySong" autoplay loop preload="auto">
+            <source src="audio/background-audio.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <!-- Content -->
+        <div class="container">
+            <h1 class="title">Happy Birthday <span class="highlight">SIMRAN</span>!</h1>
+            <p id="animated-message" class="message"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
